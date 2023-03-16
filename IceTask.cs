@@ -3,6 +3,9 @@ using System;
 namespace ICETask.cs{
 
     class Scripts{
+                int[] lecs = new int[numLecs];  // stores number of scripts to marks for each lec
+                double[] hrs = new Double[numLecs]; // stores the number of hours each lec will spend marking
+                double[] mins = new Double[numLecs]; // stores the number of mins each lec will spend marking
 
         static void main (String [] args){
             entry();
@@ -12,7 +15,7 @@ namespace ICETask.cs{
         static void entry(){
 
             do {
-            System.Console.WriteLine("enter the total number of scripts to be marked");
+            System.Console.WriteLine("Enter the total number of scripts to be marked");
               int scripts = Console.ReadLine();
             }
             while(scripts < 0);
@@ -27,9 +30,7 @@ namespace ICETask.cs{
                 double sub = Console.ReadLine();
                 System.Console.WriteLine("the number of lecturers who will be marking ");
                 int numLecs = Console.ReadLine();
-                int[] lecs = new int[numLecs];  // stores number of scripts to marks for each lec
-                double[] hrs = new Double[numLecs]; // stores the number of hours each lec will spend marking
-                double[] mins = new Double[numLecs]; // stores the number of mins each lec will spend marking
+
             }while(sub < 0 || Lecs  > 0 );
         }
 
