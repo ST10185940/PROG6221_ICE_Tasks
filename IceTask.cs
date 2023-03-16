@@ -7,8 +7,6 @@ namespace ICETask.cs{
         static void main (String [] args){
             entry();
             ditribute();
-            display();
-            displayfull();
         }
 
         static void entry(){
@@ -30,32 +28,31 @@ namespace ICETask.cs{
                 System.Console.WriteLine("the number of lecturers who will be marking ");
                 int numLecs = Console.ReadLine();
                 int[] lecs = new int[numLecs];  // stores number of scripts to marks for each lec
+                double[] hrs = new Double[numLecs]; // stores the number of hours each lec will spend marking
+                double[] mins = new Double[numLecs]; // stores the number of mins each lec will spend marking
             }while(sub < 0 || Lecs  > 0 );
         }
 
         static void distribute(){
             int toMark,timeToMark,hrs,mins;
-            foreach( int tut in lecs)
-            
-               remains = (scripts%50);
-               
+            remains = (scripts%50);
 
-
-               if (reamins == 0){
+            if (reamins == 0){
                toMark= (scripts/50);
                timeToMark = (questions*2)*toMark;
                hrs = (timeToMark/3600); //changes seconds in hrs 
                mins = (timeToMark%3600) *60 ; //  gets remainders of hrs and changes into mins
-               display();  }
-
+               display();}
 
                else
                {
+                foreach( int tut in lecs){
                  Lecs [tut+1] += remains;
-                 if ( Lecs [tut+1] += remains);   
-                 displayfull(); 
+                 hrs[tut+1] = (questions*2)*Lecs[tut+1]/3600;
+                 mins[tut+1] = ((questions*2)*Lecs[tut+1]/3600)*60;     
+                 }
                }
-
+   
         }
         static void display(){
                 System.Console.WriteLine($"Scriptes per Lecturer:{toMark}");
@@ -65,9 +62,7 @@ namespace ICETask.cs{
         static void displayfull(){
                 foreach(int l in lecs)
                 {
-                        System.Console.WriteLine();
-
-
+                    System.Console.WriteLine($"lectrure{l} will mark {lecs[l]} scripts and will spend {hrs[l]}hrs and {mins[l]} minutes marking scripts ");
                 }
         }
     }
